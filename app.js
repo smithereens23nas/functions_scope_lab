@@ -8,3 +8,10 @@ return saves a value that can be used later on. Console.log doesn't save anythin
 3. What are the implications of the ability of a function to return a value?
 You can use that returned value in your other functions or later in your code.
 */
+
+// 2.
+function calculateCube(num){
+    return num * num * num;
+}
+console.log(calculateCube(5));
+
