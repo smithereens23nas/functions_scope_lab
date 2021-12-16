@@ -33,4 +33,17 @@ return `${letter} is a vowel`
 function getTwoLengths(word1, word2){
     return [word1.length, word2.length];
 }
-console.log(getTwoLengths("Hank", "Hippopopalous"));
+// console.log(getTwoLengths("Hank", "Hippopopalous"));
+
+// ## 5. Sum Array
+// Write a function `sumArray` that takes an **array** as an argument.
+// The array should contain numbers. The function should return the sum of the numbers in the array. **Do not use `.reduce()`**.
+
+function sumArray(arr){
+    let sum = 0;
+for(let i = 0; i < arr.length; i++){
+    sum += arr[i];
+}
+ return sum;
+}
+console.log(sumArray([1, 2, 3, 4, 5, 6]));
