@@ -78,20 +78,80 @@ function printPrimes(num1) {
 
 // printPrimes(97);
 
-
 // ## 7. Print Longest Word
 
 // Write a function `printLongestWord` that accepts a single argument, an **array of strings**. The method should return the longest word in the array. In case of a tie, the method should return the word that appears first in the array.
 
-function printLongestWord(word){
-    let temp = word[0]
-    for(let i = 0; i < word.length; i++){
-        if(word[i].length > temp.length) {
-            temp = word[i]
-        }
+function printLongestWord(word) {
+  let temp = word[0];
+  for (let i = 0; i < word.length; i++) {
+    if (word[i].length > temp.length) {
+      temp = word[i];
     }
-    return temp;
+  }
+  return temp;
 }
-// console.log(printLongestWord(["BoJack", "Princess", "Diane", "a", "Max", "Peanutbutter", "big", "blob"]));
+// console.log(printLongestWord(["BoJack","Princess", "Diane", "a", "Max", "Peanutbutter", "big", "blob"]));
 
 // > => "Peanutbutter
+
+// ## Project Euler Problem
+// [Project Euler problem #2](https://projecteuler.net/problem=2)
+
+// * Write a function that takes a parameter, a number. The function should print the Fibonacci sequence up to that number.
+
+// * Adjust the function to push the **even numbered** values into an array.
+
+// * Adjust the function to return the summed value of the array.
+
+// * Find the sum of the even numbered values that do not exceed four million.
+
+function eulerProblem(num) {
+  let eulerStart = [1, 1];
+  let even = 0;
+  let newNumber = 0;
+  while (newNumber < num) {
+    newNumber =
+      eulerStart[eulerStart.length - 1] + eulerStart[eulerStart.length - 2];
+    if (newNumber < num) {
+      eulerStart.push(newNumber);
+      if (eulerStart.length % 3 === 0) {
+        even += newNumber;
+      }
+    }
+    console.log(newNumber);
+  }
+  console.log(even);
+  console.log(eulerStart);
+  return even;
+}
+// console.log(eulerProblem(10));
+
+// ## A Needle in the Haystack
+
+// [From Codewars](https://www.codewars.com/kata/56676e8fabd2d1ff3000000c) [Join CodeWars](www.codewars.com/r/bEqEeQ)
+
+// Can you find the needle in the haystack?
+
+// Write a function `findNeedle()` that takes an array full of junk but contains one `"needle"`
+
+// After your function finds the needle it should return a message (as a string) that says:
+
+// `"found the needle at postition"` plus the index it found the needle so:
+
+// `find_needle(['hay', 'junk', 'hay', 'hay', 'moreJunk', 'needle', 'randomJunk'])`
+
+// Should return:
+
+// `"found the needle at position 5"`
+
+function findNeedle(needle) {
+    for(let i = 0; i < needle.length; i++){
+        if(needle[i].toLowerCase() === 'needle'){
+            return "found the needle at position " + i;
+        }
+    }
+}
+
+
+console.log(findNeedle(['hay', 'junk', 'hay', 'hay', 'moreJunk', 'Needle', 'randomJunk']));
