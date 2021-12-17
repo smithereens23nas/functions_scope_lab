@@ -65,7 +65,7 @@ function checkPrime(num) {
   return true;
 }
 
-console.log(checkPrime(47));
+// console.log(checkPrime(47));
 
 function printPrimes(num1) {
   for (let i = 2; i < num1; i++) {
@@ -76,4 +76,22 @@ function printPrimes(num1) {
   }
 }
 
-printPrimes(97);
+// printPrimes(97);
+
+
+// ## 7. Print Longest Word
+
+// Write a function `printLongestWord` that accepts a single argument, an **array of strings**. The method should return the longest word in the array. In case of a tie, the method should return the word that appears first in the array.
+
+function printLongestWord(word){
+    let temp = word[0]
+    for(let i = 0; i < word.length; i++){
+        if(word[i].length > temp.length) {
+            temp = word[i]
+        }
+    }
+    return temp;
+}
+// console.log(printLongestWord(["BoJack", "Princess", "Diane", "a", "Max", "Peanutbutter", "big", "blob"]));
+
+// > => "Peanutbutter
