@@ -146,12 +146,31 @@ function eulerProblem(num) {
 // `"found the needle at position 5"`
 
 function findNeedle(needle) {
-    for(let i = 0; i < needle.length; i++){
-        if(needle[i].toLowerCase() === 'needle'){
-            return "found the needle at position " + i;
-        }
+  for (let i = 0; i < needle.length; i++) {
+    if (needle[i].toLowerCase() === "needle") {
+      return "found the needle at position " + i;
     }
+  }
 }
 
+// console.log(findNeedle(['hay', 'junk', 'hay', 'hay', 'moreJunk', 'Needle', 'randomJunk']));
 
-console.log(findNeedle(['hay', 'junk', 'hay', 'hay', 'moreJunk', 'Needle', 'randomJunk']));
+// ## Sum the Positive
+
+// [From Codewars](https://www.codewars.com/kata/5715eaedb436cf5606000381)
+
+// Given an array, return the sum of only the positive numbers
+
+function sumOfPositives(num) {
+  let sum = 0;
+  for(let i = 0; i < num.length; i++){
+    if(num[i] > 0) {
+     sum += num[i];
+  }
+  
+  }
+  return sum;
+}
+
+// console.log(sumOfPositives([1]));
+console.log(sumOfPositives([1, -4, 7, 12]));
